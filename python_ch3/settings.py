@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'emaillist',
     'helloworld',
     'django.contrib.admin',
     'django.contrib.auth',

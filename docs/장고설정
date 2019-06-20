@@ -1,3 +1,6 @@
+- 기본적으로 장고 프로젝트 한 개당 한 개의 DB 를 사용한다.
+- 장고 프로젝트에는 기본적으로 관리프로그램이 내장되기 때문에
+
 - postgresql 에 db 생성 및 계정생성 접근 권한 부여
 1. create database djdb
 2. create user djdb with password 'djdb';
@@ -66,12 +69,44 @@
 =========================================================
 
 Application 작업
-1. 어플리케이션 추가
-   [터미널]
-   python manage.py startapp helloworld
-2. 어플리커이션 등록 (settings.py)
-   INSTALLED_APPS = [
-       'python_ch3',
-       ...,
-       ...
-   ]
+    1) helloworld
+        1.  어플리케이션 추가
+            [터미널]
+            python manage.py startapp helloworld
+        2. 어플리케이션 등록 (settings.py)
+            INSTALLED_APPS = [
+                'helloworld',
+                ...,
+                ...
+            ]
+        3. template
+                |---- helloworld
+           어플리케이션 template 디렉토리 생성
+        4. Model 정의(생략)
+        5. urls.py에서 url-view의 handler 매핑
+        6. views.py에서 핸들러 함수 구현(요청처리, 모델작업, 응답처리)
+        7. 화면이 필요한 경우, 해당 template 작업
+
+    2) emaillist
+        1.  어플리케이션 추가
+            [터미널]
+            python manage.py startapp emaillist
+        2. 어플리케이션 등록 (settings.py)
+            INSTALLED_APPS = [
+                'emaillist',
+                ...,
+                ...
+            ]
+        3. template
+                |---- emaillist
+           어플리케이션 template 디렉토리 생성
+        4-1. Model 정의
+        4-2. admin.py 에
+             admin.site.register(Emaillist)
+        4-3. migration 이름의 DDL python 모듈을 생성
+             python manage.py makemigrations
+        4-4. 물리DB와 스키마 동기화 작업을 한다.
+             python manage.py migrate
+        5. urls.py에서 url-view의 handler 매핑
+        6. views.py에서 핸들러 함수 구현(요청처리, 모델작업, 응답처리)
+        7. 화면이 필요한 경우, 해당 template 작업
