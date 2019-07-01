@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'webdb',
         'USER': 'webdb',
         'PASSWORD': 'webdb',
-        'HOST': '192.168.0.39',
+        'HOST': '192.168.0.39git rm -r --cached .',
         'PORT': 5432
     }
 }
