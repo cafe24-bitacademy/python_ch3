@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'python_ch3.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djdb',
-        'USER': 'djdb',
-        'PASSWORD': 'djdb',
-        'HOST': '192.168.1.250',
+        'NAME': 'webdb',
+        'USER': 'webdb',
+        'PASSWORD': 'webdb',
+        'HOST': '192.168.0.39',
         'PORT': 5432
     }
 }
